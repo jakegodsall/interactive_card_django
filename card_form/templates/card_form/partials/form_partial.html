@@ -4,10 +4,12 @@
         <div class="card-form__row">
             {{ form.cardholder_name.label_tag }}
             {{ form.cardholder_name }}
+            {{ form.cardholder_name.errors }}
         </div>
         <div class="card-form__row">
             {{ form.card_number.label_tag }}
             {{ form.card_number }}
+            {{ form.card_number.errors }}
         </div>
         <div class="card-form__row final-row">
             <fieldset>
@@ -20,6 +22,9 @@
                 {{ form.cvc }}
             </div>
         </div>
+            {{ form.expiry_month.errors }}
+            {{ form.expiry_year.errors }}
+            {{ form.cvc.errors }}
         <div class="card-form__row">
             <button type="submit">Confirm</button>
         </div>
