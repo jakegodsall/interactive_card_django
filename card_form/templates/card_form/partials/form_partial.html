@@ -1,7 +1,22 @@
 <div class="card-form">
     <form action="/" method="POST">
         {% csrf_token %}
-        {{ form }}
+        <div class="card-form__row">
+            {{ form.cardholder_name.label_tag }}
+            {{ form.cardholder_name }}
+        </div>
+        <div class="card-form__row">
+            {{ form.card_number.label_tag }}
+            {{ form.card_number }}
+        </div>
+        <div class="card-form__row">
+            {{ form.card_number.label_tag }}
+            {{ form.expiry_month }}
+            {{ form.card_number.label_tag }}
+            {{ form.expiry_year }}
+            {{ form.card_number.label_tag }}
+            {{ form.cvc }}
+        </div>
         <button type="submit">submit</button>
     </form>
 </div>
