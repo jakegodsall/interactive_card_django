@@ -15,3 +15,7 @@
 {% block form_block %}
     {% include 'card_form/partials/form_partial.html' with form=form %}
 {% endblock %}
+
+{% block javascript_block %}
+    <script src="{% static 'card_form/javascript/card_update.js' %}"></script>
+{% endblock %}

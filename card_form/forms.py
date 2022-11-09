@@ -59,7 +59,9 @@ class CardForm(forms.Form):
         label="cardholder name",
         max_length=100,
         error_messages=error_messages["cardholder_name"],
-        widget=forms.TextInput(attrs={'placeholder': 'e.g. Jane Appleseed'}),
+        widget=forms.TextInput(attrs={
+            'placeholder': 'e.g. Jane Appleseed'
+        }),
         validators=[only_letters, has_two_parts]
     )
     card_number = forms.CharField(

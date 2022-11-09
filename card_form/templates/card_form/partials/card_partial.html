@@ -2,16 +2,21 @@
 
 <div class="card-container">
     <div class="card-front">
-        <img class="card-front__bank-logo" src="{% static 'card_form/images/card-logo.svg' %}" alt="Bank logo" class="card-front__bank-logo">
-        <p class="card-front__card-number">
-            0000 0000 0000 0000
-        </p>
+        <img
+            class="card-front__bank-logo"
+            src="{% static 'card_form/images/card-logo.svg' %}"
+            alt="Bank logo"
+            class="card-front__bank-logo"
+        />
+        <p class="card-front__card-number" id="card-number">0000 0000 0000 0000</p>
         <div class="card-front__bottom-row">
-            <p class="card-front__cardholder-name">Jane Appleseed</p>
-            <p class="card-front__cardholder-name">00/00</p>
+            <p class="card-front__cardholder-name" id="card-name">Jane Appleseed</p>
+            <p class="card-front__cardholder-name">
+                <span id="card-month">00</span>/<span id="card-year">00</span>
+            </p>
         </div>
     </div>
     <div class="card-back">
-        <p class="card-back__cvc">000</p>
+        <p class="card-back__cvc" id="card-cvc">000</p>
     </div>
 </div>
