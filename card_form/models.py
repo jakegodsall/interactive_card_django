@@ -10,6 +10,9 @@ class CustomerCard(models.Model):
     expiry_year = models.IntegerField()
     cvc = models.IntegerField()
 
+    # def __str__(self):
+    #     split_name = self.cardholder_name.split(' ')
+    #     return ' '.join([f"{split_name[0][0]}.", split_name[1]])
+
     def __str__(self):
-        split_name = self.cardholder_name.split(' ')
-        return ' '.join([f"{split_name[0][0]}.", split_name[1]])
+        return self.cardholder_name
