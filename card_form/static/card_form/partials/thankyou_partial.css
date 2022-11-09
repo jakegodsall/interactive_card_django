@@ -1,0 +1,31 @@
+.thankyou-container {
+    text-align: center;
+    width: 50%;
+}
+
+.thankyou-container__title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.thankyou-container p {
+    color: var(--dark-grey-violet);
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 3rem;
+}
+
+.thankyou-container button {
+    background-color: var(--very-dark-grey-violet);
+    border: none;
+    color: var(--white);
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
+.thankyou-container button:active {
+    transform: translateY(3px);
+}

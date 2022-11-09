@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="thankyou-container">
+    <img src="{% static 'card_form/images/icon-complete.svg' %}" alt="" />
+    <h3 class="thankyou-container__title">Thank you!</h3>
+    <p>We've added your card details</p>
+    <button type="button">
+        <a href="{% url 'card_form' %}">
+            Continue
+        </a>
+    </button>
+</div>
