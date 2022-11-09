@@ -7,6 +7,9 @@ current_year = date.today().year - 2000
 
 
 def only_numbers(value):
+    """
+        Checks that value only consists of numbers.
+    """
     regex = r"\D"
     if len(re.findall(regex, value)) != 0:
         print(re.findall(regex, value))
@@ -14,6 +17,9 @@ def only_numbers(value):
 
 
 def only_letters(value):
+    """
+        Checks that value only includes latin alphabetical characters.
+    """
     regex = r"[^a-zA-z ]"
     if len(re.findall(regex, value)) != 0:
         print(re.findall(regex, value))
@@ -21,6 +27,9 @@ def only_letters(value):
 
 
 def has_two_parts(value):
+    """
+        Checks 'cardholder name' consists of two groups of characters separated by a space.
+    """
     if len(value.split(' ')) != 2:
         raise forms.ValidationError(
             'Please enter your first name followed by your surname.')
@@ -86,14 +95,15 @@ class CardForm(forms.Form):
             MaxValueValidator(current_year + 50, message="Enter a valid year.")
         ]
     )
-    cvc = forms.IntegerField(
+    cvc = forms.CharField(
         label="cvc",
         error_messages=error_messages["cvc"],
-        widget=forms.NumberInput(
+        min_length=1,
+        max_length=3,
+        widget=forms.TextInput(
             attrs={'placeholder': 'e.g. 123'}
         ),
         validators=[
-            MinValueValidator(0, "Enter a valid CVV."),
-            MaxValueValidator(999, "Enter a valid CVV.")
+            MinLengthValidator(3, message="CVV must be three digits.")
         ]
     )
