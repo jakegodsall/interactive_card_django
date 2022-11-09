@@ -1,2 +1,68 @@
 .card-form {
+    width: 40%;
+}
+
+.card-form__row {
+    width: 100%;
+    padding: 0.8rem 0;
+}
+
+.card-form__row label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.card-form__row input {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid var(--light-grey-violet);
+    padding: 0.7rem;
+}
+
+.card-form__row input:focus {
+    border: 0.5px solid var(--lin-grad-1);
+}
+
+.final-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-form__row fieldset {
+    width: 45%;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.card-form__row fieldset legend {
+    margin-bottom: 0.2rem;
+}
+
+.cvc-widget {
+    width: 50%;
+}
+
+.card-form__row button {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--very-dark-grey-violet);
+    color: var(--white);
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    border-radius: 5px;
+}
+
+.card-form__row button:active {
+    transform: translateY(2px);
 }

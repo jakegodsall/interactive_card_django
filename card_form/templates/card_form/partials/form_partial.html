@@ -9,14 +9,19 @@
             {{ form.card_number.label_tag }}
             {{ form.card_number }}
         </div>
-        <div class="card-form__row">
-            {{ form.card_number.label_tag }}
-            {{ form.expiry_month }}
-            {{ form.card_number.label_tag }}
-            {{ form.expiry_year }}
-            {{ form.card_number.label_tag }}
-            {{ form.cvc }}
+        <div class="card-form__row final-row">
+            <fieldset>
+                <legend>exp. date (mm/yy)</legend>
+                {{ form.expiry_month }}
+                {{ form.expiry_year }}
+            </fieldset>
+            <div class="cvc-widget">
+                {{ form.cvc.label_tag }}
+                {{ form.cvc }}
+            </div>
         </div>
-        <button type="submit">submit</button>
+        <div class="card-form__row">
+            <button type="submit">Confirm</button>
+        </div>
     </form>
 </div>
