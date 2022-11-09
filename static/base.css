@@ -20,6 +20,7 @@
 }
 
 body {
+    margin: 0;
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var(--very-dark-grey-violet);
@@ -32,4 +33,29 @@ li {
 
 li {
     list-style: none;
+}
+
+.background-image {
+    position: absolute;
+    width: 40%;
+    height: 100vh;
+    background-image: url('./images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+}
+
+.grid__column1 {
+}
+
+.grid__column2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

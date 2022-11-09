@@ -5,8 +5,13 @@
 
 {% block styles_block %}
 <link rel="stylesheet" href="{% static 'card_form/partials/form_partial.css' %}">
+<link rel="stylesheet" href="{% static 'card_form/partials/card_partial.css' %}" >
 {% endblock %}
 
-{% block content_block %}
+{% block card_block %}
+    {% include 'card_form/partials/card_partial.html' %}
+{% endblock %}
+
+{% block form_block %}
     {% include 'card_form/partials/form_partial.html' with form=form %}
 {% endblock %}

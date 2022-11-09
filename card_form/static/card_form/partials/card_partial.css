@@ -1,0 +1,25 @@
+.card-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card-front,
+.card-back {
+    width: 440px;
+    aspect-ratio: 2 / 1;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-image: url('../images/bg-card-front.png');
+    transform: translateX(50px);
+}
+
+.card-back {
+    background-image: url('../images/bg-card-back.png');
+    transform: translateX(150px);
+}

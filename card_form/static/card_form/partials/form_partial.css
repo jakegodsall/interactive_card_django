@@ -1,5 +1,5 @@
 .card-form {
-    width: 40%;
+    width: max(30%, 400px);
 }
 
 .card-form__row {

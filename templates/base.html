@@ -11,7 +11,15 @@
         {% block styles_block %}{% endblock %}
     </head>
     <body>
-        {% block content_block %}{% endblock %}
+        <div class="background-image"></div>
+        <div class="grid">
+           <div class="grid__column1">
+                {% block card_block %}{% endblock %}
+           </div>
+           <div class="grid__column2">
+               {% block form_block %}{% endblock %}
+           </div>
+        </div>
 
         {% block javascript_block %}{% endblock %}
     </body>
