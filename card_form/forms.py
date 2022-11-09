@@ -1,5 +1,9 @@
 from django import forms
+from django.core.validators import MinValueValidator, MaxValueValidator
 import re
+from datetime import date
+
+current_year = date.today().year - 2000
 
 
 def only_numbers(value):
@@ -59,25 +63,34 @@ class CardForm(forms.Form):
     )
     expiry_month = forms.IntegerField(
         label="exp month",
-        min_value=1,
-        max_value=12,
         error_messages=error_messages["expiry_month"],
         widget=forms.NumberInput(
             attrs={'placeholder': 'MM'}
-        )
+        ),
+        validators=[
+            MinValueValidator(1, message="Enter a valid month."),
+            MaxValueValidator(12, message="Enter a valid month.")
+        ]
     )
     expiry_year = forms.IntegerField(
         label="exp year",
-        min_value=0,
-        max_value=22,
         error_messages=error_messages["expiry_year"],
         widget=forms.NumberInput(
             attrs={'placeholder': 'YY'}
-        )
+        ),
+        validators=[
+            MinValueValidator(current_year, message="Enter a valid year."),
+            MaxValueValidator(current_year + 50, message="Enter a valid year.")
+        ]
     )
     cvc = forms.IntegerField(
         label="cvc",
         error_messages=error_messages["cvc"],
         widget=forms.NumberInput(
             attrs={'placeholder': 'e.g. 123'}
-        ))
+        ),
+        validators=[
+            MinValueValidator(0, "Enter a valid CVV."),
+            MaxValueValidator(999, "Enter a valid CVV.")
+        ]
+    )

@@ -5,7 +5,7 @@
             {{ form.cardholder_name.label_tag }}
             {{ form.cardholder_name }}
             {{ form.cardholder_name.errors }}
-        </div>
+        </div> 
         <div class="card-form__row">
             {{ form.card_number.label_tag }}
             {{ form.card_number }}
@@ -14,17 +14,22 @@
         <div class="card-form__row final-row">
             <fieldset>
                 <legend>exp. date (mm/yy)</legend>
-                {{ form.expiry_month }}
-                {{ form.expiry_year }}
+                <div class="month-widget">
+                    {{ form.expiry_month }}
+                    {{ form.expiry_month.errors }}
+                </div>
+                <div class="year-widget">
+                    {{ form.expiry_year }}
+                    {{ form.expiry_year.errors }}
+                </div>
             </fieldset>
             <div class="cvc-widget">
                 {{ form.cvc.label_tag }}
                 {{ form.cvc }}
+                {{ form.cvc.errors }}
             </div>
         </div>
-            {{ form.expiry_month.errors }}
-            {{ form.expiry_year.errors }}
-            {{ form.cvc.errors }}
+            
         <div class="card-form__row">
             <button type="submit">Confirm</button>
         </div>
