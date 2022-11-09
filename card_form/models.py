@@ -11,6 +11,5 @@ class CustomerCard(models.Model):
     cvc = models.IntegerField()
 
     def __str__(self):
-        name_arr = self.cardholder_name.split('')
-        formatted_name = ' '.join([name_arr[0][0], name_arr[1]])
-        return formatted_name
+        split_name = self.cardholder_name.split(' ')
+        return ' '.join([f"{split_name[0][0]}.", split_name[1]])

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from .forms import CardForm
+from .models import CustomerCard
 
 # Create your views here.
 
@@ -12,8 +13,16 @@ def card_form(request):
         card_form = CardForm(request.POST)
 
         if card_form.is_valid():
+            form_data = card_form.cleaned_data
             print(card_form.cleaned_data)
-
+            customer_data = CustomerCard(
+                cardholder_name=form_data["cardholder_name"],
+                card_number=form_data["card_number"],
+                expiry_month=form_data["expiry_month"],
+                expiry_year=form_data["expiry_year"],
+                cvc=form_data["cvc"]
+            )
+            customer_data.save()
             return HttpResponseRedirect('/thank-you')
 
     # if GET request, then unbound form
