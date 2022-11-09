@@ -5,6 +5,14 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    color: var(--light-grey-violet);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+}
+
+.card-front p {
+    margin: 0;
 }
 
 .card-front,
@@ -12,6 +20,7 @@
     width: 440px;
     aspect-ratio: 2 / 1;
     border-radius: 10px;
+    padding: 2rem;
 }
 
 .card-front {
@@ -19,7 +28,32 @@
     transform: translateX(50px);
 }
 
+.card-front__bank-logo {
+    width: 5rem;
+}
+
+.card-front__card-number {
+    margin-top: 2.2rem !important;
+    font-size: 1.65rem;
+    font-weight: lighter;
+    letter-spacing: 0.25rem;
+}
+
+.card-front__bottom-row {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 .card-back {
     background-image: url('../images/bg-card-back.png');
     transform: translateX(150px);
+    position: relative;
+}
+
+.card-back__cvc {
+    position: absolute;
+    right: 3.5rem;
+    color: var(--white);
+    top: 6.2rem;
 }
