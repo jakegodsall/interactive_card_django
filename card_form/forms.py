@@ -1,5 +1,5 @@
 from django import forms
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
 import re
 from datetime import date
 
@@ -59,7 +59,10 @@ class CardForm(forms.Form):
         error_messages=error_messages["card_number"],
         widget=forms.TextInput(
             attrs={'placeholder': 'e.g. 1234 5678 9123 0000'}),
-        validators=[only_numbers]
+        validators=[
+            only_numbers,
+            MinLengthValidator(16, message="Card number must be 16 digits.")
+        ]
     )
     expiry_month = forms.IntegerField(
         label="exp month",

@@ -24,3 +24,12 @@ body {
     font-size: var(--font-size);
     color: var(--very-dark-grey-violet);
 }
+
+ul,
+li {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}

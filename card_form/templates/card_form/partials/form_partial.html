@@ -1,32 +1,52 @@
 <div class="card-form">
     <form action="/" method="POST">
         {% csrf_token %}
-        <div class="card-form__row">
+        <div class="card-form__row {% if form.cardholder_name.errors %}error{% endif %}">
             {{ form.cardholder_name.label_tag }}
             {{ form.cardholder_name }}
-            {{ form.cardholder_name.errors }}
+             <ul class="errorlist">
+                <li>
+                    {{ form.cardholder_name.errors|first }}
+                </li>
+            </ul>
         </div> 
-        <div class="card-form__row">
+        <div class="card-form__row {% if form.card_number.errors %}error{% endif %}">
             {{ form.card_number.label_tag }}
             {{ form.card_number }}
-            {{ form.card_number.errors }}
+             <ul class="errorlist">
+                <li>
+                    {{ form.card_number.errors|first }}
+                </li>
+            </ul>
         </div>
         <div class="card-form__row final-row">
             <fieldset>
                 <legend>exp. date (mm/yy)</legend>
-                <div class="month-widget">
+                <div class="month-widget {% if form.expiry_month.errors %}error{% endif %}">
                     {{ form.expiry_month }}
-                    {{ form.expiry_month.errors }}
+                    <ul class="errorlist">
+                        <li>
+                            {{ form.expiry_month.errors|first }}
+                        </li>
+                    </ul>
                 </div>
-                <div class="year-widget">
+                <div class="year-widget {% if form.expiry_year.errors %}error{% endif %}">
                     {{ form.expiry_year }}
-                    {{ form.expiry_year.errors }}
+                    <ul class="errorlist">
+                        <li>
+                            {{ form.expiry_year.errors|first }}
+                        </li>
+                    </ul>
                 </div>
             </fieldset>
-            <div class="cvc-widget">
+            <div class="cvc-widget {% if form.cvc.errors %}error{% endif %}">
                 {{ form.cvc.label_tag }}
                 {{ form.cvc }}
-                {{ form.cvc.errors }}
+                <ul class="errorlist">
+                    <li>
+                        {{ form.cvc.errors|first }}
+                    </li>
+                </ul>
             </div>
         </div>
             

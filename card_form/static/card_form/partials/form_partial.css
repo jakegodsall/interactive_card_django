@@ -66,3 +66,16 @@
 .card-form__row button:active {
     transform: translateY(2px);
 }
+
+li {
+    text-transform: none;
+    font-size: 0.7rem;
+}
+
+.errorlist {
+    color: var(--red);
+}
+
+.error input {
+    border: 1px solid var(--red);
+}
