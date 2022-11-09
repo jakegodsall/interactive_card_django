@@ -16,6 +16,7 @@
 }
 
 .thankyou-container button {
+    cursor: pointer;
     background-color: var(--very-dark-grey-violet);
     border: none;
     color: var(--white);
