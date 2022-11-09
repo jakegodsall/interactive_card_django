@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title_block %}Thank You!{% endblock %}
+{% block title_block %}Submission{% endblock %}
 
-{% block content_block %}
-<h1>THANK YOU</h1>
+{% block styles_block %}
+<link rel="stylesheet" href="{% static 'card_form/partials/form_partial.css' %}">
+<link rel="stylesheet" href="{% static 'card_form/partials/card_partial.css' %}" >
+{% endblock %}
+
+{% block card_block %}
+    {% include 'card_form/partials/card_partial.html' %}
 {% endblock %}
