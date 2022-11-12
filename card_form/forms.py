@@ -3,6 +3,8 @@ from django.core.validators import MinLengthValidator
 import re
 from datetime import date
 
+from .models import CustomerCard
+
 current_year = date.today().year - 2000
 
 
@@ -54,6 +56,20 @@ error_messages = {
 }
 
 
+# class CardForm(forms.ModelForm):
+#     class Meta:
+#         model = CustomerCard
+#         fields = '__all__'
+
+#     def clean_expiry_month(self):
+#         expiry_month = self.cleaned_data.get('expiry_motnh')
+
+#         if
+
+#     def clean(self):
+#         super(CardForm, self).clean()
+
+
 class CardForm(forms.Form):
     cardholder_name = forms.CharField(
         label="cardholder name",
@@ -71,8 +87,8 @@ class CardForm(forms.Form):
         widget=forms.TextInput(
             attrs={'placeholder': 'e.g. 1234 5678 9123 0000'}),
         validators=[
+            MinLengthValidator(16, message="Card number must be 16 digits."),
             only_numbers,
-            MinLengthValidator(16, message="Card number must be 16 digits.")
         ]
     )
     expiry_month = forms.CharField(

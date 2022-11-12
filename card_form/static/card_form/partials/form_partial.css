@@ -82,6 +82,10 @@ li {
     color: var(--red);
 }
 
+.cvc-widget .errorlist {
+    margin-top: 13px;
+}
+
 .error input {
     border: 1px solid var(--red);
 }
