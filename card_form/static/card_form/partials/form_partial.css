@@ -96,3 +96,9 @@ li {
         padding: 5rem;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .card-form {
+        width: 72vw;
+    }
+}
