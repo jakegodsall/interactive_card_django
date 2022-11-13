@@ -25,11 +25,13 @@
 
 .card-front {
     background-image: url('../images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     transform: translateX(50px);
 }
 
 .card-front__bank-logo {
-    width: 5rem;
+    width: 20%
 }
 
 .card-front__card-number {
@@ -47,6 +49,8 @@
 
 .card-back {
     background-image: url('../images/bg-card-back.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     transform: translateX(150px);
     position: relative;
 }
@@ -57,3 +61,45 @@
     color: var(--white);
     top: 6.2rem;
 }
+
+@media screen and (max-width: 1300px) {
+    .card-container {
+        height: auto;
+        padding: 0;
+    }
+
+    .card-front {
+        z-index: 10;
+        transform: translateX(-10vw) translateY(100%);
+    }
+
+    .card-back {
+        transform: translateX(10vw) translateY(-77%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-front,
+    .card-back {
+        width: 70vw;
+        aspect-ratio: 2 / 1;
+        border-radius: 10px;
+        padding: 2rem;
+    }
+
+    .card-front__bank-logo {
+        margin: 0;
+        
+    }
+
+    .card-front__card-number {
+        margin: 1rem 0 !important;
+        width: 100%;
+        /* text-align: justify; */
+        font-size: 3.5vw;
+    }
+
+    .card-front__bottom-row {
+        margin: 3vh 0 0 0;
+    }
+})

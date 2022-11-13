@@ -89,3 +89,10 @@ li {
 .error input {
     border: 1px solid var(--red);
 }
+
+@media screen and (max-width: 1300px) {
+    .card-container {
+        height: auto;
+        padding: 5rem;
+    }
+}
