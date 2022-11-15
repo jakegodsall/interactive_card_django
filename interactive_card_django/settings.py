@@ -27,9 +27,9 @@ SECRET_KEY = getenv('SECRET_KEY')
 DEBUG = getenv('IS_DEVELOPMENT', True)
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     getenv('APP_HOST')
 ]
-
 
 # Application definition
 

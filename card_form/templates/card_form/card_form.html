@@ -5,7 +5,12 @@
 
 {% block styles_block %}
 <link rel="stylesheet" href="{% static 'card_form/partials/form_partial.css' %}">
-<link rel="stylesheet" href="{% static 'card_form/partials/card_partial.css' %}" >
+<link rel="stylesheet" href="{% static 'card_form/partials/card_partial.css' %}">
+<link rel="stylesheet" href="{% static 'card_form/partials/warning.css' %}">
+{% endblock %}
+
+{% block warning_block %}
+    {% include 'card_form/partials/warning.html' %}
 {% endblock %}
 
 {% block card_block %}
@@ -15,6 +20,8 @@
 {% block form_block %}
     {% include 'card_form/partials/form_partial.html' with form=form %}
 {% endblock %}
+
+
 
 {% block javascript_block %}
     <script src="{% static 'card_form/javascript/card_update.js' %}"></script>
