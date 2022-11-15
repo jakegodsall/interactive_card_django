@@ -11,8 +11,8 @@
         {% block styles_block %}{% endblock %}
     </head>
     <body>
-        {% block warning_block %}{% endblock %}
-        <div class="background-image"></div>
+        
+        <div class="background-image" id="background-image"></div>
         <div class="grid">
            <div class="grid__column1">
                 {% block card_block %}{% endblock %}
@@ -22,7 +22,7 @@
            </div>
         </div>
      
-
+        {% block warning_block %}{% endblock %}
         {% block javascript_block %}{% endblock %}
     </body>
 </html>
