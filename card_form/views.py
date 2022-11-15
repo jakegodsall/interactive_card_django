@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views import View
+from django.views.generic.base import TemplateView
 
 from .forms import CardForm
 from .models import CustomerCard
@@ -7,9 +9,8 @@ from .models import CustomerCard
 # Create your views here.
 
 
-def card_form(request):
-    # if POST request, then bound Form
-    if request.method == 'POST':
+class CardFormView(View):
+    def post(self, request):
         card_form = CardForm(request.POST)
 
         if card_form.is_valid():
@@ -23,16 +24,19 @@ def card_form(request):
                 cvc=form_data["cvc"]
             )
             customer_data.save()
+
             return HttpResponseRedirect('/thank-you')
 
-    # if GET request, then unbound form
-    elif request.method == 'GET':
+    def get(self, request):
         card_form = CardForm()
 
-    return render(request, 'card_form/card_form.html', {
-        "form": card_form
-    })
+        return render(request, 'card_form/card_form.html', {
+            "form": card_form
+        })
 
 
-def thank_you(request):
-    return render(request, 'card_form/thank_you.html')
+class ThankYouView(TemplateView):
+    template_name = 'card_form/thank_you.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
