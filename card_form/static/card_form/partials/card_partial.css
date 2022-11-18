@@ -116,6 +116,10 @@
         margin: 1.5vh 0 0 0;
     }
 
+    .card-front__cardholder-name {
+        font-size: 2vw;
+    }
+
     .card-front__card-number {
         font-size: 3vw;
     }
