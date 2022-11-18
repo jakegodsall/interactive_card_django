@@ -73,7 +73,7 @@ error_messages = {
 class CardForm(forms.Form):
     cardholder_name = forms.CharField(
         label="cardholder name",
-        max_length=100,
+        max_length=27,
         error_messages=error_messages["cardholder_name"],
         widget=forms.TextInput(attrs={
             'placeholder': 'e.g. Jane Appleseed'
