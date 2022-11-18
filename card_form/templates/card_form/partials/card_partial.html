@@ -8,15 +8,47 @@
             alt="Bank logo"
             class="card-front__bank-logo"
         />
-        <p class="card-front__card-number" id="card-number">0000 0000 0000 0000</p>
+        <p class="card-front__card-number" id="card-number">
+            {% if card_number %}
+                {{ card_number }}
+            {% else %}
+                0000 0000 0000 0000
+            {% endif %}
+        </p>
         <div class="card-front__bottom-row">
-            <p class="card-front__cardholder-name" id="card-name">Jane Appleseed</p>
+            <p class="card-front__cardholder-name" id="card-name">
+                {% if cardholder_name %}
+                    {{ cardholder_name }}
+                {% else %}
+                    Jane Appleseed
+                {% endif %}    
+            </p>
             <p class="card-front__cardholder-name">
-                <span id="card-month">00</span>/<span id="card-year">00</span>
+                <span id="card-month">
+                    {% if expiry_month %}
+                        {{ expiry_month }}
+                    {% else %}
+                        00
+                    {% endif %}
+                </span>
+                    /
+                <span id="card-year">
+                    {% if expiry_year %}
+                        {{ expiry_year }}
+                    {% else %}
+                        00
+                    {% endif %}
+                </span>
             </p>
         </div>
     </div>
     <div class="card-back">
-        <p class="card-back__cvc" id="card-cvc">000</p>
+        <p class="card-back__cvc" id="card-cvc">
+            {% if cvc %}
+                {{ cvc }}
+            {% else %}
+                000
+            {% endif %}
+        </p>
     </div>
 </div>
