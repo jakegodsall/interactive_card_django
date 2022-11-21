@@ -11,25 +11,23 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from os import getenv
+import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+IS_HEROKU = "DYNO" in os.environ
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = getenv('SECRET_KEY')
+if 'SECRET_KEY' in os.environ:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv('IS_DEVELOPMENT', True)
+if not IS_HEROKU:
+    DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    getenv('APP_HOST')
-]
+if IS_HEROKU:
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -78,6 +76,8 @@ WSGI_APPLICATION = 'interactive_card_django.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+MAX_CONN_AGE = 600
 
 DATABASES = {
     'default': {

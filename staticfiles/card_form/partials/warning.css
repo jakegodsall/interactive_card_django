@@ -1,0 +1,41 @@
+.warning-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 20;
+    background-color: rgba(71, 71, 71, 0.654);
+    width: 100vw;
+    height: 100vh;
+}
+
+.warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(var(--lin-grad-1), var(--lin-grad-2));
+    padding: 2rem;
+    border-radius: 10px;
+    width: min(80%, 400px);
+    text-align: center;
+    color: var(--light-grey-violet);
+    letter-spacing: 0.1rem;
+}
+
+.warning h3 {
+    margin: 0;
+}
+
+.warning button {
+    width: min(100%, 170px);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.warning button:active {
+    transform: translateY(2px);
+}

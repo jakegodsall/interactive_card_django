@@ -1,0 +1,126 @@
+.card-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: var(--light-grey-violet);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+}
+
+.card-front p {
+    margin: 0;
+}
+
+.card-front,
+.card-back {
+    width: 440px;
+    aspect-ratio: 2 / 1;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.card-front {
+    background-image: url('../images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateX(50px);
+}
+
+.card-front__bank-logo {
+    width: 20%;
+}
+
+.card-front__card-number {
+    margin-top: 2.2rem !important;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    letter-spacing: 0.25rem;
+}
+
+.card-front__bottom-row {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3vw;
+}
+
+.card-back {
+    background-image: url('../images/bg-card-back.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateX(150px);
+    position: relative;
+}
+
+.card-back__cvc {
+    position: absolute;
+    right: 6rem;
+    color: var(--white);
+    top: 5.5rem;
+}
+
+@media screen and (max-width: 1300px) {
+    .card-container {
+        height: auto;
+        padding: 0;
+    }
+
+    .card-front {
+        z-index: 10;
+        transform: translateX(-10vw) translateY(100%);
+    }
+
+    .card-back {
+        transform: translateX(10vw) translateY(-77%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-front,
+    .card-back {
+        width: 70vw;
+        aspect-ratio: 2 / 1;
+        border-radius: 10px;
+        padding: 2rem;
+    }
+
+    .card-front__bank-logo {
+        margin: 0;
+    }
+
+    .card-front__card-number {
+        margin: 1rem 0 !important;
+        width: 100%;
+        /* text-align: justify; */
+        font-size: 3.5vw;
+    }
+
+    .card-front__bottom-row {
+        margin: 3vh 0 0 0;
+    }
+
+    .card-back__cvc {
+        position: absolute;
+        right: 15vw;
+        color: var(--white);
+        top: 38%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card-front__bottom-row {
+        margin: 1.5vh 0 0 0;
+    }
+
+    .card-front__cardholder-name {
+        font-size: 2vw;
+    }
+
+    .card-front__card-number {
+        font-size: 3vw;
+    }
+}
