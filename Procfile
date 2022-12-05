@@ -1,1 +1,0 @@
-web: gunicorn interactive_card_django.wsgi

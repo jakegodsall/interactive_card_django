@@ -15,19 +15,18 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-IS_HEROKU = "DYNO" in os.environ
-
 
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
-if not IS_HEROKU:
+if 'IS_PRODUCTION' in os.environ and os.environ.get('IS_PRODUCTION') == 'True':
+    DEBUG = False
+else:
     DEBUG = True
 
-if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    os.environ.get('APP_HOST')
+]
 
 # Application definition
 
@@ -77,7 +76,6 @@ WSGI_APPLICATION = 'interactive_card_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-MAX_CONN_AGE = 600
 
 DATABASES = {
     'default': {
@@ -134,5 +132,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-SESSION_COOKIE_AGE = 60
