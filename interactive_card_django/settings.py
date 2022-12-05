@@ -25,7 +25,8 @@ else:
     DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.environ.get('APP_HOST')
+    os.environ.get('APP_HOST'),
+    '*'
 ]
 
 # Application definition
