@@ -25,9 +25,13 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 Users should be able to:
 
 &#9745; Fill in the form and see the card details update in real-time
+
 &#9745; Receive error messages when the form is submitted if any input field is empty
+
 &#9745; Receive error messages when the form is submitted if the card number, expiry date, or CVC fields are in the wrong format
+
 &#9745; View the optimal layout depending on their device's screen size
+
 &#9745; See hover, active, and focus states for interactive elements on the page
 
 ### Backend Development
@@ -57,6 +61,7 @@ I have also included both frontend and backend validation of form inputs.
 - CSS Grid
 - Vanilla JavaScript
 - Django
+- AWS Elastic Beanstalk
 
 ## Author
 
