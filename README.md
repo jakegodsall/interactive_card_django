@@ -43,14 +43,13 @@ I have also included both frontend and backend validation of form inputs.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./usage-gif.gif)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
+- Live Site URL: __Not yet live__
+- 
 ## My process
 
 ### Built with
@@ -61,7 +60,7 @@ I have also included both frontend and backend validation of form inputs.
 - CSS Grid
 - Vanilla JavaScript
 - Django
-- AWS Elastic Beanstalk
+
 
 ## Author
 

@@ -18,16 +18,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
-if 'IS_PRODUCTION' in os.environ and os.environ.get('IS_PRODUCTION') == 'True':
-    DEBUG = False
 else:
-    DEBUG = True
+    SECRET_KEY = '!c6f4^@)$b-2t2%-ggkg0tb++6l@++t*g-45&#&wrt6a6#t^x4'
 
-ALLOWED_HOSTS = [
-    os.environ.get('APP_HOST'),
-    '*'
-]
+DEBUG = True
+
 
 # Application definition
 
@@ -80,12 +75,8 @@ WSGI_APPLICATION = 'interactive_card_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': os.environ.get('DATABASE_USERNAME'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'carddata'
     }
 }
 
@@ -131,7 +122,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
