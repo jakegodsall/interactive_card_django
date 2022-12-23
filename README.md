@@ -9,7 +9,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
   - [Overview](#overview)
     - [The challenge (Frontend Only)](#the-challenge-frontend-only)
     - [Backend Development](#backend-development)
-    - [Screenshot](#screenshot)
+    - [In Action](#in-action)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -41,7 +41,7 @@ I have built a backend in Django to accompany this Frontend Mentor project. This
 I have also included both frontend and backend validation of form inputs.
 
 
-### Screenshot
+### In Action
 
 ![](./usage-gif.gif)
 
